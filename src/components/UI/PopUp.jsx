@@ -1,4 +1,4 @@
-import styled from './Popup.module.css';
+import styled from './PopUp.module.css';
 import Button from './Button';
 const PopUp = (props) => {
     return(<div className={styled.backdrop}>
