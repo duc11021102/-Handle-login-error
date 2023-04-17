@@ -1,0 +1,81 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+  width: 360px;
+  z-index: 1;
+  background: #ffffff;
+  max-width: 360px;
+  padding: 45px;
+  margin-top: 220px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  color: black;
+  background: #f2f2f2;
+  width: 100%;
+  border: 1px solid #d3d3d3;
+  margin: 15px 0 0 0;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.login-form .error {
+  border-color: red;
+}
+.form input:focus {
+  border: 1px solid black;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #2F58CD;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  margin-top: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,
+.form button:active,
+.form button:focus {
+  background: #132d72;
+}
+.form .message {
+  margin: 15px 0 15px 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.login-form a {
+  color: #3795BD;
+}
+.login-form p{
+  color: #132d72 ;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+body {
+  background: #76b852;
+  background: rgb(141, 194, 111);
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
