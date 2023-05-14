@@ -4,6 +4,8 @@ import ErrorModal from "../UI/ErrorModal";
 import PopUp from "../UI/PopUp";
 import Button from "../UI/Button";
 import PopupWrong from "../UI/PopupWrong";
+import Input from "../Input/Input";
+import { useRef } from "react";
 
 const LoginForm = () => {
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -30,6 +32,9 @@ const LoginForm = () => {
     // When re-entering the pass, the red error message will disappear
     setIsValidPassword(true);
   };
+  // create ref
+  const emailInputRef = useRef();
+  const passwordInputRef = useRef();
 
   //handle event after pressing login
   const onClickHandler = (event) => {
@@ -53,6 +58,13 @@ const LoginForm = () => {
     //   isMessageEmail("Email must be filled in the correct format @gmail.com");
     // }
 
+    // focus first input wrong after click login 
+    if(enteredEmail.trim().length  === 0){
+      emailInputRef.current.focus();
+    }else if(enteredPassword.trim().length  === 0){
+      passwordInputRef.current.focus();
+    }
+    
     // data variable stores data after user input
     const data = {
       email: enteredEmail,
@@ -117,13 +129,15 @@ const LoginForm = () => {
 
     // returns blank password box after clicking login
     // setEnteredPassword("");
+
+    
   };
-
-
 
   // turn off the welcome popup when you press ok
   const onClosedHandler = () => {
     setIsValid(false);
+    setEnteredEmail("");
+    setEnteredPassword("");
     setWrongLogin(false);
   };
   // turn off link a
@@ -142,17 +156,19 @@ const LoginForm = () => {
         <PopupWrong onClosed={onClosedHandler}></PopupWrong>
       )}
       <form className={`${styled["login-form"]}`}>
-        <input
-          className={isValidEmail ? "" : "error"}
-          type="email"
+        <Input
+          ref={emailInputRef}
+          className={isValidEmail ? "" : `${styled.error}`}
+          type="text"
           id="email"
           value={enteredEmail}
           placeholder="Username"
           onChange={EmailChangeHandler}
         />
         {!isValidEmail && <ErrorModal message={messageEmail}></ErrorModal>}
-        <input
-          className={isValidPassword ? "" : "error"}
+        <Input
+        ref={passwordInputRef}
+          className={isValidPassword ? "" : `${styled.error}`}
           type="password"
           value={enteredPassword}
           placeholder="Password"

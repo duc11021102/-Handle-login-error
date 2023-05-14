@@ -17,25 +17,12 @@
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-.form input {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  color: black;
-  background: #f2f2f2;
-  width: 100%;
-  border: 1px solid #d3d3d3;
-  margin: 15px 0 0 0;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
+
 
 .login-form .error {
   border-color: red;
 }
-.form input:focus {
-  border: 1px solid black;
-}
+
 .form button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
